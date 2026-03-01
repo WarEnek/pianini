@@ -1,4 +1,4 @@
-# Pianini Deployment Guide (VPS + Portainer + Nginx Proxy Manager)
+# Pianinni Deployment Guide (VPS + Portainer + Nginx Proxy Manager)
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@
 
 ## 1. Create Shared Network (if not exists)
 
-NPM and Pianini must be on the same Docker network. Create it once:
+NPM and Pianinni must be on the same Docker network. Create it once:
 
 ```bash
 docker network create proxy
@@ -28,7 +28,7 @@ cp .env.docker.example .env
 ### Option A: Stack (recommended)
 
 1. Portainer → Stacks → Add stack
-2. Name: `pianini`
+2. Name: `pianinni`
 3. Web editor: paste contents of `docker-compose.yml`
 4. Add environment variables (or use `.env` file):
    - `VITE_SUPABASE_URL`
@@ -41,16 +41,16 @@ cp .env.docker.example .env
 docker build \
   --build-arg VITE_SUPABASE_URL=https://xxx.supabase.co \
   --build-arg VITE_SUPABASE_ANON_KEY=your-key \
-  -t pianini:latest .
+  -t pianinni:latest .
 
-docker run -d --name pianini --network proxy --restart unless-stopped pianini:latest
+docker run -d --name pianinni --network proxy --restart unless-stopped pianinni:latest
 ```
 
 ## 4. Configure Nginx Proxy Manager
 
 1. NPM → Hosts → Proxy Hosts → Add Proxy Host
-2. **Domain**: your domain (e.g. `pianini.example.com`)
-3. **Forward Hostname**: `pianini` (container name)
+2. **Domain**: your domain (e.g. `pianinni.example.com`)
+3. **Forward Hostname**: `pianinni` (container name)
 4. **Forward Port**: `80`
 5. **Scheme**: `http`
 6. Enable SSL (Let's Encrypt) if needed
@@ -78,4 +78,4 @@ networks:
     name: nginxproxymanager_default  # or your NPM network name
 ```
 
-Or connect Pianini to NPM's network via Portainer UI after deployment.
+Or connect Pianinni to NPM's network via Portainer UI after deployment.
