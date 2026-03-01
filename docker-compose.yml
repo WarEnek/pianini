@@ -8,7 +8,9 @@ services:
         VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
     container_name: pianinni
     restart: unless-stopped
+    networks:
+      - proxy_net
 
 networks:
-  proxy:
-    driver: bridge
+  proxy_net:
+    external: true
