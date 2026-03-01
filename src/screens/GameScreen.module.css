@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-bg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 4px;
+  flex-shrink: 0;
+}
+
+.backBtn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-full);
+}
+
+.backBtn:active {
+  background: var(--color-bg-card-hover);
+}
+
+.headerCenter {
+  flex: 1;
+  text-align: center;
+}
+
+.feedbackText {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.feedbackText strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.progressWrap {
+  padding: 8px 16px 0;
+  flex-shrink: 0;
+}
+
+.staffArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.catPeek {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-60%);
+  animation: peekIn 0.3s ease;
+}
+
+@keyframes peekIn {
+  from { transform: translateY(-40%) translateX(40px); opacity: 0; }
+  to { transform: translateY(-60%) translateX(0); opacity: 1; }
+}
+
+.pianoArea {
+  flex-shrink: 0;
+  border-top: 1px solid var(--color-progress-bg);
+}

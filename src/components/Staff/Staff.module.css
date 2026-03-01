@@ -1,0 +1,22 @@
+.staffContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.staffSvg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.noteAnimate {
+  animation: notePop 0.3s ease;
+}
+
+@keyframes notePop {
+  0% { transform-origin: center; transform: scale(1); }
+  50% { transform-origin: center; transform: scale(1.2); }
+  100% { transform-origin: center; transform: scale(1); }
+}

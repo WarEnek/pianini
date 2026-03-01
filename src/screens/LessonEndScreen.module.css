@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 80px 24px 32px;
+  background: var(--color-bg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-top: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.score {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.primaryBtn {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: var(--radius-lg);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.primaryBtn:active {
+  background: var(--color-primary-light);
+  transform: scale(0.98);
+}
+
+.secondaryBtn {
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.secondaryBtn:active {
+  color: var(--color-text);
+}
+
+.brand {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-top: 16px;
+}

@@ -1,0 +1,108 @@
+.pianoWrapper {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.pianoScroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pianoScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pianoKeys {
+  position: relative;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.whiteKey {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--color-white-key);
+  border: 1.5px solid #D5D1DE;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.15s ease;
+}
+
+.whiteKey:active {
+  background: #F0EEF5;
+}
+
+.keyLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.middleC {
+  border-color: #C4BFD6;
+}
+
+.middleCDot {
+  position: absolute;
+  bottom: 32px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.blackKey {
+  position: absolute;
+  top: 0;
+  height: 125px;
+  background: var(--color-black-key);
+  border-radius: 0 0 6px 6px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.15s ease;
+}
+
+.blackKey:active {
+  background: #444;
+}
+
+.keyCorrect {
+  background: var(--color-success) !important;
+  border-color: var(--color-success-note);
+}
+
+.keyWrong {
+  background: var(--color-error) !important;
+  border-color: var(--color-error-note);
+}
+
+.blackKeyCorrect {
+  background: var(--color-success-note) !important;
+}
+
+.blackKeyWrong {
+  background: var(--color-error-note) !important;
+}
+
+.dimKey {
+  background: #F0EEF3;
+  border-color: #E2DFE8;
+}
+
+.dimBlackKey {
+  background: #8A8694;
+}
