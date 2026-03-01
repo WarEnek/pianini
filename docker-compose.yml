@@ -9,8 +9,8 @@ services:
     container_name: pianini
     restart: unless-stopped
     networks:
-      - proxy
+      - proxy_net
 
 networks:
   proxy:
-    external: true
+    driver: bridge
