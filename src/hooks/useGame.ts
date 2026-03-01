@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'preact/hooks';
 import type { ClefMode, NoteDefinition, GamePhase, LessonAttempt } from '../types';
 import { getNotesForMode, getRandomNote } from '../lib/notes';
+import { vibrateCorrect, vibrateWrong } from '../lib/haptic';
 
 const ATTEMPTS_PER_LESSON = 8;
 
@@ -46,6 +47,12 @@ export function useGame(clefMode: ClefMode) {
       if (state.phase !== 'playing') return;
 
       const isCorrect = noteId === state.currentNote.id;
+
+      if (isCorrect) {
+        vibrateCorrect();
+      } else {
+        vibrateWrong();
+      }
 
       setState((prev) => ({
         ...prev,
